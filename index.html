@@ -92,14 +92,16 @@
     <section id="about" class="section-with-bg">
         <div class="container" data-aos="fade-up">
             <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="about-content">
-                    <div class="about-logo">
-                        <img src="assets/img/logo/logo-2.png" alt="MLNLP">
-                    </div>
-                    <div class="about-item">
-                        <p><b>MLNLP社区</b>是国内外知名自然语言处理社区，受众覆盖国内外NLP硕博生、高校老师以及企业研究人员。<br>
-                            <b>社区的愿景</b>是<b>促进国内外自然语言处理，机器学习学术界、产业界和广大爱好者之间的交流</b>，特别是<b>初学者同学们的进步</b>。
-                        </p>
+                <div role="tabpanel" class="col-lg-8 tab-pane fade show active" id="about-content">
+                    <div id="about-content-box">
+                        <div class="about-logo">
+                            <img src="assets/img/logo/logo-2.png" alt="MLNLP">
+                        </div>
+                        <div class="about-item">
+                            <p><b>MLNLP社区</b>是国内外知名自然语言处理社区，受众覆盖国内外NLP硕博生、高校老师以及企业研究人员。<br>
+                                <b>社区的愿景</b>是<b>促进国内外自然语言处理，机器学习学术界、产业界和广大爱好者之间的交流</b>，特别是<b>初学者同学们的进步</b>。
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,34 +109,36 @@
     </section>
 
     <section id="gallery">
-        <div class="container" data-aos="fade-up">
-            <div id="gallery-title" class="section-header">
-                <a href="activity_category.html">
-                    <p>Academic Events</p>
-                    <h2>学术活动</h2>
-                    <p id="gallery-title-tip">探索 MLNLP 社区的学术研讨会、学术 Talk 等精彩活动。</p>
-                </a>
+        <div data-aos="fade-up">
+            <div class="container">
+                <div id="gallery-title" class="section-header">
+                    <a href="activity_category.html">
+                        <p>Academic Events</p>
+                        <h2>学术活动</h2>
+                        <p id="gallery-title-tip">探索 MLNLP 社区的学术研讨会、学术 Talk 等精彩活动。</p>
+                    </a>
+                </div>
             </div>
-        </div>
 
-        <div id="activity-category-gallery">
-            <div id="activity-category-gallery-box">
-                <button class="prev-arrow" onclick="prevSlide()">◀</button>
-                <div id="slides-container"></div>
-                <button class="next-arrow" onclick="nextSlide()">▶</button>
+            <div id="activity-category-gallery">
+                <div id="activity-category-gallery-box">
+                    <button class="prev-arrow" onclick="prevSlide()">◀</button>
+                    <div id="slides-container"></div>
+                    <button class="next-arrow" onclick="nextSlide()">▶</button>
+                </div>
+                <!--                        <div class="dots-container">-->
+                <!--                            <span class="dot" onclick="currentSlide(1)"></span>-->
+                <!--                            <span class="dot" onclick="currentSlide(2)"></span>-->
+                <!--                            <span class="dot" onclick="currentSlide(3)"></span>-->
+                <!--                            <span class="dot" onclick="currentSlide(4)"></span>-->
+                <!--                            <span class="dot" onclick="currentSlide(5)"></span>-->
+                <!--                        </div>-->
             </div>
-<!--                        <div class="dots-container">-->
-<!--                            <span class="dot" onclick="currentSlide(1)"></span>-->
-<!--                            <span class="dot" onclick="currentSlide(2)"></span>-->
-<!--                            <span class="dot" onclick="currentSlide(3)"></span>-->
-<!--                            <span class="dot" onclick="currentSlide(4)"></span>-->
-<!--                            <span class="dot" onclick="currentSlide(5)"></span>-->
-<!--                        </div>-->
         </div>
     </section>
 
     <section id="committee">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <div id="committee-title" class="section-header">
                 <a href="committee.html">
                     <p>Community Members</p>

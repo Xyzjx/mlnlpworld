@@ -188,7 +188,7 @@
 
                     // 构建 HTML 字符串
                     html_str += `
-                <div class="row activity-category-box">
+                <div class="row activity-category-box" data-aos="fade-up">
                     <a href="${activity.html_url}" class="col-5 activity-category-cover-box">
                         <img loading="lazy" src="${activity.cover_url}" alt="">
                     </a>
@@ -196,7 +196,9 @@
                         <div class="col">
                             <div class="row">
                                 <div class="col-10">
-                                    <h2 class="activity-category-data-title">${activity.title}</h2>
+                                    <a href="${activity.html_url}">
+                                        <h2 class="activity-category-data-title">${activity.title}</h2>
+                                    </a>
                                 </div>
                                 <div class="col-2 activity-category-date">
                                     <p class="activity-category-data-year">${year}</p>

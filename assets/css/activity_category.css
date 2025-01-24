@@ -156,6 +156,7 @@
     font-size: 32px;
     font-weight: 600;
     text-align: left;
+    color: black;
     border-left: 4px solid #4869df;
     transition: color ease-in-out 0.3s;
 }

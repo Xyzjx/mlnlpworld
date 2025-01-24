@@ -685,7 +685,7 @@ h6 {
 --------------------------------------------------------------*/
 
 #about {
-    padding: 120px 0 120px 0;
+    padding: 140px 0 120px 0;
 }
 
 @media (max-width: 991px) {
@@ -699,12 +699,29 @@ h6 {
     }
 }
 
+/* TODO: 首页设计 */
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.35);
+    }
+}
+
+#about-content-box{
+    max-width: 90vw !important;
+    transform: scale(1);
+    animation: scaleUp 2.5s ease-in-out forwards;
+}
+
 #about-content{
+    transform: scale(1);
     transition: transform ease-in-out 1s;
 }
 
 #about-content:hover{
-    transform: scale(1.15);
+    transform: scale(1.05);
 }
 
 #about .about-logo{
@@ -714,7 +731,7 @@ h6 {
 }
 
 #about .about-logo:hover{
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 #about .about-logo img{
@@ -732,14 +749,14 @@ h6 {
 }
 
 #about .about-item:hover{
-    transform: scale(1.1);
+    transform: scale(1.08);
     background-color: #fff;
     box-shadow: 0 0 30px 8px rgba(0, 0, 0, 0.1);
 }
 
 #about .about-item>p {
     padding: 10px 20px !important;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 5px;
     margin-bottom: 5px;
     text-align: left;
