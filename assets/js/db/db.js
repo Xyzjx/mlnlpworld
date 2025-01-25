@@ -5,23 +5,29 @@
  * @returns {Promise<SQL.Database>} 加载完成的 SQLite 数据库实例。
  * @throws {Error} 如果数据库文件加载失败或初始化过程中发生错误，将抛出异常。
  */
+let cachedDb = null;
+
 async function initDb(path) {
-    config = {
-        locateFile: file => `./assets/js/dist/${file}`
-    };
+    if (cachedDb == null) {
+        config = {
+            locateFile: file => `./assets/js/dist/${file}`
+        };
 
-    // 初始化 SQLite.js 环境
-    const SQL = await initSqlJs(config);
+        // 初始化 SQLite.js 环境
+        const SQL = await initSqlJs(config);
 
-    // 加载指定路径的 SQLite 数据库文件
-    const response = await fetch(path);
-    if (!response.ok) {
-        throw new Error(`Failed to load database file from ${path}`);
+        // 加载指定路径的 SQLite 数据库文件
+        const response = await fetch(path);
+        if (!response.ok) {
+            throw new Error(`Failed to load database file from ${path}`);
+        }
+
+        // 创建并返回 SQLite 数据库实例
+        const buffer = await response.arrayBuffer();
+        cachedDb = new SQL.Database(new Uint8Array(buffer))
     }
 
-    // 创建并返回 SQLite 数据库实例
-    const buffer = await response.arrayBuffer();
-    return new SQL.Database(new Uint8Array(buffer));
+    return cachedDb;
 }
 
 // TODO: comment
