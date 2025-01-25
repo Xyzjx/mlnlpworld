@@ -103,6 +103,34 @@
     transform: scale(1.05);
 }
 
+@media (max-width: 991px) {
+    #activity-category-gallery-box {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #slides-container {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .prev-arrow, .next-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        background-color: rgba(0, 0, 0, 0.27);
+    }
+
+    .prev-arrow {
+        left: 10px;
+    }
+
+    .next-arrow {
+        right: 10px;
+    }
+}
+
 #committee-title {
     margin-top: 60px;
 }

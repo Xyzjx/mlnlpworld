@@ -1,5 +1,5 @@
 .committee-container-bottom {
-    margin-bottom: 150px;
+    margin-bottom: 80px;
 }
 
 #committee-former-container {
@@ -8,7 +8,7 @@
 
 #committee-title, #committee-former-title {
     padding-bottom: 60px;
-    margin: 180px auto 60px auto;
+    margin: 100px auto 60px auto;
 }
 
 #committee-title p, #committee-former-title p {
