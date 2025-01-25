@@ -19,6 +19,7 @@ body {
         Roboto,
         Helvetica,
         Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    overflow-x: hidden;
 }
 
 a {

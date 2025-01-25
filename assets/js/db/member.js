@@ -27,7 +27,8 @@ async function findMembersByRoleAndByTerm(role_id, term_id) {
         select *
         from member_view
         where role_id = ${role_id} 
-          and term_id = ${term_id};
+          and term_id = ${term_id}
+        order by pinyin;
     `;
     return await execute(query);
 }
