@@ -72,6 +72,7 @@
             <ul>
                 <li><a class="nav-link scrollto active" href="#">首页</a></li>
                 <li><a class="nav-link scrollto" href="activity_category.html">学术活动</a></li>
+                <li><a class="nav-link scrollto" href="project.html">开源项目</a></li>
                 <li><a class="nav-link scrollto" href="committee.html">社区成员</a></li>
                 <li><a class="nav-link scrollto" href="#footer">联系我们</a></li>
             </ul>
@@ -168,7 +169,6 @@
         try {
             // 发起请求获取 seminar 数据
             const result = await findMembersByGroup();
-            console.log(result);
 
             let html_str_list = [];
 

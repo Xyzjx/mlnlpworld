@@ -11,6 +11,11 @@
     margin: 100px auto 60px auto;
 }
 
+/* TODO: 页面css分离 */
+#committee-title.committee-html {
+    margin-top: 150px;
+}
+
 #committee-title p, #committee-former-title p {
     margin-bottom: 5px;
     font-size: 14px;
