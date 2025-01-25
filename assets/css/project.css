@@ -20,8 +20,10 @@
     text-justify: inter-word;
 }
 
+/* TODO：右margin问题 */
 #project-container {
     margin-bottom: 150px;
+    margin-left: 22px;
 }
 
 .schedule-card {
