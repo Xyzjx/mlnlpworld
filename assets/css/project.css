@@ -35,11 +35,24 @@
     border-radius: 5px;
     background: #fff;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.8s ease-in-out;
 }
 
 .schedule-card.schedule-card-add {
     background: none;
     box-shadow: none;
+}
+
+.schedule-card:hover {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding-left: 6px;
+}
+
+.bi-github-info {
+    font-size: 18px;
 }
 
 .project-name {
@@ -48,11 +61,16 @@
     font-weight: 600;
     margin-bottom: 10px;
     color: #2f3138;
+    transition: color 0.3s ease-in-out;
 }
 
 .project-description {
     text-align: left;
     font-size: 14px !important;
     color: #2f3138;
+    transition: color 0.3s ease-in-out;
+}
 
+.project-name:hover, .project-description:hover {
+    color: #4869df;
 }

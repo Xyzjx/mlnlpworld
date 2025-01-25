@@ -126,9 +126,14 @@
         html_str_list.push(`
           <div class="col-lg-5 col-md-5 d-flex align-items-stretch schedule-card">
             <a class="project aos-init aos-animate" target="_blank" href="${project.html_url}">
-              <div class="project-info">
-                <h4 class="project-name">${project.title}</h4>
-                <span class="project-description">${project.description}</span>
+              <div class="row">
+                <div class="col-auto">
+                  <i class="bi bi-github bi-github-info"></i>
+                </div>
+                <div class="project-info col">
+                  <h4 class="project-name">${project.title}</h4>
+                  <span class="project-description">${project.description}</span>
+                </div>
               </div>
             </a>
           </div>
