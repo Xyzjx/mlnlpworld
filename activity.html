@@ -151,10 +151,10 @@
         `;
                 if (activity.video_url) {
                     info_html_str += `
-                <a href="${activity.video_url}">
-                    <img id="activity-data-bilibili" src="assets/img/logo/bilibili.png" alt="">
-                </a>
-            `;
+                        <a href="${activity.video_url}">
+                            <img id="activity-data-bilibili" src="assets/img/logo/bilibili.png" alt="">
+                        </a>
+                    `;
                 }
                 $("#activity-info").html(info_html_str);
 
@@ -176,19 +176,32 @@
                     const endHour = String(endTime.getHours()).padStart(2, "0");
                     const endMinute = String(endTime.getMinutes()).padStart(2, "0");
 
+                    console.log(segment)
+
+                    let video_html = '';
+                    if (segment.video_url != null) {
+                        video_html = `
+                            <a href="${segment.video_url}">
+                                <i class="bi bi-camera-reels-fill"></i>
+                            </a>
+                        `;
+                    }
+
                     if (segment.type === 1) {
                         html_str += `
                     <div class="tab-pane segment-1">
                         <div class="segment-1-layout">
                             <h4>${segment.heading}</h4>
                             <div class="segment-time">${startYear}/${startMonth}/${startDay} ${startHour}:${startMinute}-${endHour}:${endMinute}</div>
-                            <div class="row col-2 segment-cover">
-                                <img loading="lazy" src="${segment.avatar_url}" alt="${segment.name}">
-                            </div>
-                            <div class="row agenda-item">
-                                <h4>${segment.name}</h4>
-                                <p class="span-block">${segment.organization}</p>
-                            </div>
+                            <a href="">
+                                <div class="row col-2 segment-cover">
+                                    <img loading="lazy" src="${segment.avatar_url}" alt="${segment.name}">
+                                </div>
+                                <div class="row agenda-item">
+                                    <h4>${segment.name}</h4>
+                                    <p class="span-block">${segment.organization}</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 `;
@@ -208,7 +221,7 @@
                         </div>
                         <div class="col-8">
                             <div class="label-box">
-                                <div class="label">专题报告</div>
+                                ${video_html}
                             </div>
                             <a href="" target="_blank">
                                 <h4>${segment.name} <span class="span-block">${segment.organization}${segment.title}</span> </h4>

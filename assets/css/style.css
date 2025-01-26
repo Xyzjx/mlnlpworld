@@ -1224,6 +1224,8 @@ h6 {
 #schedule .label-box {
     float: right;
     margin-right: 20px;
+    padding-top: 6px;
+    padding-right: 5px;
     font-size: 15px;
     font-weight: normal
 }
