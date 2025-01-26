@@ -16,37 +16,37 @@
 
 ├──  **assets**：静态资源。
 
-​        ├──  **css**：样式表文件（css）。
+>├──  **css**：样式表文件（css）。
 
-​        ├──  **img**：图片资源。
+>├──  **img**：图片资源。
 
-​                ├──  **activity**：活动相关的图片。
+>>├──  **activity**：活动相关的图片。
 
-​                        ├──  **meeting**：MLNLP大会图片。
+>>>├──  **meeting**：MLNLP大会图片。
 
-​                                ├──  **meeting-1**：第一届MLNLP大会图片。
+>>>>├──  **meeting-1**：第一届MLNLP大会图片。
 
-​                                └──  **meeting-x**：第x届MLNLP大会图片。
+>>>>└──  **meeting-x**：第x届MLNLP大会图片。
 
-​                        ├──  **seminar**：MLNLP学术研讨会图片，内部结构与meeting相似。
+>>>├──  **seminar**：MLNLP学术研讨会图片，内部结构与meeting相似。
 
-​                        └──  **talk**：MLNLP学术Talk图片，内部结构与meeting相似。
+>>>└──  **talk**：MLNLP学术Talk图片，内部结构与meeting相似。
 
-​                ├──  **committee**：社区成员照片。
+>>├──  **committee**：社区成员照片。
 
-​                ├──  **logo**：各类logo图片。
+>>├──  **logo**：各类logo图片。
 
-​                └──  **qrcode**：二维码图片。
+>>└──  **qrcode**：二维码图片。
 
-​        ├──  **js**：JavaScript文件。
+>├──  **js**：JavaScript文件。
 
-​                └──  **db**：数据库相关的JavaScript文件。
+>>└──  **db**：数据库相关的JavaScript文件。
 
-​        └──  **vendor**：依赖的第三方库或框架。
+>└──  **vendor**：依赖的第三方库或框架。
 
 ├──  **db**：数据库。
 
-​        └── **mlnlp.sqlite**：网站的sqlite数据库文件。
+>└── **mlnlp.sqlite**：网站的sqlite数据库文件。
 
 ├──  **activity.html**：活动详情页面。
 
