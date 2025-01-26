@@ -10,7 +10,7 @@ let cachedDb = null;
 async function initDb(path) {
     if (cachedDb == null) {
         config = {
-            locateFile: file => `./assets/js/dist/${file}`
+            locateFile: file => `./assets/vendor/sql/${file}`
         };
 
         // 初始化 SQLite.js 环境
