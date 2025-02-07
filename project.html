@@ -93,8 +93,8 @@
 
       <div id="project-container" class="section team">
         <div class="tab-content container row justify-content-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-          <div role="tabpanel" class="col-lg-12 tab-pane fade show active">
-            <div id="project-container-data" class="row schedule-item" data-aos="fade-up" >
+          <div role="tabpanel" class="col-lg-11 tab-pane fade show active">
+            <div id="project-container-data" class="waterfall-container" data-aos="fade-up" >
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@
         project = result[i];
         console.log(project)
         html_str_list.push(`
-          <div class="col-lg-5 col-md-5 d-flex align-items-stretch schedule-card">
+          <div class="waterfall-item d-flex align-items-stretch schedule-card">
             <a class="project aos-init aos-animate" target="_blank" href="${project.html_url}">
               <div class="row">
                 <div class="col-auto">
@@ -133,6 +133,10 @@
                 <div class="project-info col">
                   <h4 class="project-name">${project.title}</h4>
                   <span class="project-description">${project.description}</span>
+                  <div class="project-repo row">
+                    <img alt="" src="https://img.shields.io/github/stars/${project.github_repo}?color=FF8000" />
+                    <img alt="" src="https://img.shields.io/github/forks/${project.github_repo}?color=FF8000" />
+                  </div>
                 </div>
               </div>
             </a>
@@ -140,17 +144,70 @@
         `);
       }
 
-      if (result.length % 2 !== 0) {
-        html_str_list.push(`
-          <div class="col-lg-5 col-md-5 d-flex align-items-stretch schedule-card schedule-card-add">
-          </div>
-        `);
-      }
-
       html_str_list.push(`</div></div></div>`);
-
       const html_str = html_str_list.join('');
-      $("#project-container-data").html(html_str);
+
+      const parentContainer = document.getElementById('project-container-data');
+      parentContainer.innerHTML = html_str;
+
+      // 分配到多个列中
+      const columnCount = 2; // 假设你有两列
+      const columns = Array.from({ length: columnCount }, () => ({
+        height: 0,
+        children: [],
+      }));
+
+      const items = document.querySelectorAll('.waterfall-item');
+
+      items.forEach((item) => {
+        // 获取当前元素的高度
+        const itemHeight = item.offsetHeight;
+
+        // 找到高度最小的列
+        let minHeightColumnIndex = 0;
+        for (let i = 1; i < columns.length; i++) {
+          if (columns[i].height < columns[minHeightColumnIndex].height) {
+            minHeightColumnIndex = i;
+          }
+        }
+
+        // 将元素添加到高度最小的列
+        columns[minHeightColumnIndex].children.push(item);
+        columns[minHeightColumnIndex].height += itemHeight;
+      });
+
+      console.log(columns)
+
+      // 渲染到 DOM
+      columns.forEach((column, index) => {
+        const columnContainer = document.createElement('div');
+        columnContainer.className = `waterfall-column column-${index} col-6`;
+        column.children.forEach((item) => {
+          columnContainer.appendChild(item);
+        });
+        parentContainer.appendChild(columnContainer);
+      });
+
+      // const items = document.querySelectorAll('.waterfall-item');
+      // items.forEach((item) => {
+      //   // 创建一个虚拟元素
+      //   const virtualItem = item.cloneNode(true);
+      //   virtualItem.style.position = 'absolute';
+      //   virtualItem.style.visibility = 'hidden';
+      //   virtualItem.style.display = 'block';
+      //   document.body.appendChild(virtualItem);
+      //
+      //   const projectNameElement = item.querySelector('.project-name');
+      //   const projectName = projectNameElement.textContent || projectNameElement.innerText;
+      //
+      //   // 获取虚拟元素的高度
+      //   const height = virtualItem.offsetHeight;
+      //   console.log(`Estimated height ${projectName}: ${height}px`);
+      //
+      //   // 移除虚拟元素
+      //   document.body.removeChild(virtualItem);
+      // });
+
 
     } catch (error) {
       console.error('Error fetching seminar data:', error);

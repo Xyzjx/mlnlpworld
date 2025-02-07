@@ -3,7 +3,6 @@
     width: 100vw !important;
 }
 
-/* TODO: 宽高调整 */
 #activity-bg {
     width: 99vw;
     aspect-ratio: 50 / 13; /* 宽高比固定为 10 : 3 */
@@ -43,7 +42,6 @@
     color: #fff;
 }
 
-/* TODO: 迁移 css */
 #activity-data-cover {
     width: 48vw;
     display: block;
