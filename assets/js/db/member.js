@@ -1,9 +1,47 @@
 // TODO: comment
+// async function findMembersByGroup() {
+//     const membersList = [];
+//
+//     const maxTermResult = await execute('select max(term_id) from dict_member_term');
+//     const maxTerm = maxTermResult[0]["max(term_id)"];
+//
+//     const maxRoleResult = await execute('select count(*) from dict_member_role');
+//     const maxRole = maxRoleResult[0]["count(*)"];
+//
+//     for (let i = 1; i <= maxRole; i++) {
+//         const membersByRoleList = [];
+//
+//         for (let j = maxTerm; j > 0; j--) {
+//             const members = await findMembersByRoleAndByTerm(i, j);
+//             membersByRoleList.push(members);
+//         }
+//
+//         membersList.push(membersByRoleList);
+//     }
+//
+//     return membersList;
+// }
+//
+// async function findMembersByRoleAndByTerm(role_id, term_id) {
+//     const query =  `
+//         select *
+//         from member_view
+//         where role_id = ${role_id}
+//           and term_id = ${term_id}
+//         order by pinyin;
+//     `;
+//     return await execute(query);
+// }
+
+
 async function findMembersByGroup() {
     const membersList = [];
 
-    const maxTermResult = await execute('select count(*) from dict_member_term');
-    const maxTerm = maxTermResult[0]["count(*)"];
+    const maxAcademicTermResult = await execute('select max(term_id) from dict_member_term where role_id = 1');
+    const maxAcademicTerm = maxAcademicTermResult[0]["max(term_id)"];
+
+    const maxSecretTermResult = await execute('select max(term_id) from dict_member_term where role_id = 2');
+    const maxSecretTerm = maxSecretTermResult[0]["max(term_id)"];
 
     const maxRoleResult = await execute('select count(*) from dict_member_role');
     const maxRole = maxRoleResult[0]["count(*)"];
@@ -11,9 +49,11 @@ async function findMembersByGroup() {
     for (let i = 1; i <= maxRole; i++) {
         const membersByRoleList = [];
 
-        for (let j = maxTerm; j > 0; j--) {
+        for (let j = maxAcademicTerm; j > 0; j--) {
             const members = await findMembersByRoleAndByTerm(i, j);
-            membersByRoleList.push(members);
+            if (members != null) {
+                membersByRoleList.push(members);
+            }
         }
 
         membersList.push(membersByRoleList);

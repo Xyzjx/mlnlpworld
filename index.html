@@ -4,7 +4,7 @@
 <head>
     <!-- 谷歌分析脚本 -->
     <!-- 谷歌分析脚本待更新 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEN8DSJX72"></script>
+<!--    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEN8DSJX72"></script>-->
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -169,6 +169,8 @@
         try {
             // 发起请求获取 seminar 数据
             const result = await findMembersByGroup();
+
+            console.log(result);
 
             let html_str_list = [];
 
